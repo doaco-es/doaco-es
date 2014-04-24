@@ -30,6 +30,8 @@ gem 'simple_form'
 
 gem 'devise'
 
+gem 'foundation-rails'
+
 group :development, :test do
   gem 'rspec-rails'
   gem "capybara"
