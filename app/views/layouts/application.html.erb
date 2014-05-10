@@ -10,10 +10,39 @@
   </head>
   <body>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
-    <%= yield %>
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1><a href="#">Doaco-es</a></h1>
+        </li>
+        <li class="toggle-topbar menu-icon">
+          <a href="#"><span>Menu</span></a>
+        </li>
+      </ul>
+      <section class="top-bar-section"> <!-- Right Nav Section -->
+        <ul class="right">
+          <li class="has-dropdown">
+            <a href="#">Sessão</a>
+              <ul class="dropdown">
+                <li><a href="#">Entrar</a></li>
+                <li><a href="#">Criar Conta</a></li>
+              </ul>
+          </li>
+        </ul> <!-- Left Nav Section -->
+        <ul class="left">
+          <li>
+           <%= link_to "Minhas Doações", donations_path %>
+          </li>
+        </ul>
+      </section>
+    </nav>
+    <div class= "row">
+      <div class="small-12 columns">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <%= yield %>
+      </div>
+    </div>
 
   </body>
 </html>

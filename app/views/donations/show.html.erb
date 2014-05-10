@@ -1,0 +1,25 @@
+<h2>Doação - Código: <%= @donation.id  %> </h2>
+
+<strong>Item</strong>
+<p>
+  <%= @donation.item %>
+</p>
+
+<strong>Quantidade</strong>
+<p>
+  <%= @donation.quantity %>
+</p>
+
+<strong>Valor Financeiro</strong>
+<p>
+  <%= @donation.value %>
+</p>
+
+<strong>Data</strong>
+<p>
+  <%= @donation.date %>
+</p>
+
+
+<%= link_to 'Edit', edit_donation_path(@donation) %> |
+<%= link_to 'Back', donations_path %>
