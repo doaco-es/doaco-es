@@ -1,0 +1,23 @@
+<h2>Intituições</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @institutions.each do |institution| %>
+      <tr>
+        <td><%= institution.name %></td>
+        <td><%= link_to 'Detalhes', institution %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nova Intituição', new_institution_path, class: "button" %>

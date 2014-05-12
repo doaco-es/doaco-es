@@ -1,7 +1,6 @@
 # -*- encoding : utf-8 -*-
 Rails.application.routes.draw do
 
-
   root to: "home#index"
 
 
@@ -62,4 +61,6 @@ Rails.application.routes.draw do
   #   end
 
   resources :donations
+
+  resources :institutions
 end
