@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DoacoEs</title>
+    <title>Doações</title>
     <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'vendor/modernizr', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
@@ -20,20 +20,31 @@
         </li>
       </ul>
       <section class="top-bar-section"> <!-- Right Nav Section -->
+        <ul class="left">
+          <li><%= link_to "Minhas Doações", donations_path %></li>
+
+          <li class="has-form">
+            <form method="GET" action="/">
+              <div class="row collapse">
+                <div class="large-8 small-9 columns">
+                  <input type="text" placeholder="Instituições...">
+                </div>
+                <div class="large-4 small-3 columns">
+                  <button type="submit" class="info button expand">Buscar</button>
+                </div>
+              </div>
+            </form>
+          </li>
+        </ul>
         <ul class="right">
           <li class="has-dropdown">
             <a href="#">Sessão</a>
-              <ul class="dropdown">
-                <li><a href="#">Entrar</a></li>
-                <li><a href="#">Criar Conta</a></li>
-              </ul>
+            <ul class="dropdown">
+              <li><a href="#">Entrar</a></li>
+              <li><a href="#">Criar Conta</a></li>
+            </ul>
           </li>
         </ul> <!-- Left Nav Section -->
-        <ul class="left">
-          <li>
-           <%= link_to "Minhas Doações", donations_path %>
-          </li>
-        </ul>
       </section>
     </nav>
     <div class= "row">
