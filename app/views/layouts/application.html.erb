@@ -24,13 +24,13 @@
           <li><%= link_to "Minhas Doações", donations_path %></li>
 
           <li class="has-form">
-            <form method="GET" action="/">
+            <form method="GET" action="<%= institutions_path %>">
               <div class="row collapse">
                 <div class="large-8 small-9 columns">
-                  <input type="text" placeholder="Instituições...">
+                  <%= text_field_tag :name, params[:name], :placeholder => 'Instituições...' %>
                 </div>
                 <div class="large-4 small-3 columns">
-                  <button type="submit" class="info button expand">Buscar</button>
+                  <%= submit_tag "Buscar", :class => 'info button expand', :name => nil %>
                 </div>
               </div>
             </form>
