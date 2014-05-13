@@ -7,17 +7,20 @@
       <br>
       Empreendedorismo do curso de Engenharia de Software da UFRN
     </h3>
-    <form>
+    
+    <%= simple_form_for :institution do |f| %>
       <div class="small-6 large-centered columns">
         <div class="row collapse">
-          <div class="small-10 columns">
-            <input type="text" placeholder="Email">
-          </div>
-          <div class="small-2 columns">
-            <a href="#" class="button postfix">Join Us</a>
-          </div>
+          <%= f.input :email, label: false, placeholder: "Email" %>
+          <%= f.input :password, label: false, placeholder: "Senha" %>
+          <%= f.input :password_confirmation, label: false, placeholder: "Confirmação da Senha" %>
+          <%= f.submit 'Join Us', class: "button postfix" %>
         </div>
       </div>
+    
+    <% end %>
+    <form>
+
     </form>
   </div>
 </div>
