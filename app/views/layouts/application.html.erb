@@ -39,10 +39,14 @@
         </ul>
         <ul class="right">
           <li class="has-dropdown">
-            <a href="#">Sessão</a>
+            <a href="javascript:;">Sessão</a>
             <ul class="dropdown">
-              <li><a href="#">Entrar</a></li>
-              <li><a href="#">Criar Conta</a></li>
+              <% if user_signed_in? %>
+                <li><%= link_to "Sair", destroy_user_session_path, :method => :delete %></li>
+              <% else %>
+                <li><%= link_to "Entrar", new_user_session_path %></li>
+                <li><%= link_to "Criar Conta", new_user_registration_path %></li>
+              <% end %>
             </ul>
           </li>
         </ul> <!-- Left Nav Section -->
