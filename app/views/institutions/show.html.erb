@@ -10,6 +10,33 @@
   <%= @institution.item %>
 </p>
 
+<hr>
+
+<h3>Doações</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Item</th>
+      <th>Quantidade</th>
+      <th>Valor Financeiro</th>
+      <th>Data</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @institution.donations.each do |donation| %>
+      <tr>
+        <td><%=donation.item%></td>
+        <td><%=donation.quantity%></td>
+        <td><%=donation.value%></td>
+        <td><%=donation.date%></td>
+        <td><%= link_to 'Detalhes', donation %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
 <%= link_to 'Nova Doação', new_donation_path(@institution), class: "button" %>
 
 <br>
