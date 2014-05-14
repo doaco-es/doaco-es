@@ -8,6 +8,7 @@ class CreateDonations < ActiveRecord::Migration
       t.integer :quantity
 
       t.references :institution
+      t.references :donator, class: User
 
       t.timestamps
     end

@@ -1,11 +1,12 @@
 # -*- encoding : utf-8 -*-
 class DonationsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_donation, only: [:show, :edit, :update, :destroy]
 
   # GET /donations
   # GET /donations.json
   def index
-    @donations = Donation.all
+    @donations = Donation.where(donator_id: current_user.id)
   end
 
   # GET /donations/1
@@ -78,6 +79,6 @@ class DonationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def donation_params
-      params[:donation].permit(:item, :quantity, :value, :date)
+      params[:donation].permit(:item, :quantity, :value, :date, :institution_id).merge(donator_id: current_user.id)
     end
 end

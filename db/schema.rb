@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20140514023002) do
     t.decimal  "value"
     t.integer  "quantity"
     t.integer  "institution_id"
+    t.integer  "donator_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

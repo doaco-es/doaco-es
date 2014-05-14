@@ -39,7 +39,7 @@
         </ul>
         <ul class="right">
           <li class="has-dropdown">
-            <a href="javascript:;">Sessão</a>
+            <a href="javascript:;">Sessão <%= "(" + current_user.email + ")" if user_signed_in? %></a>
             <ul class="dropdown">
               <% if user_signed_in? %>
                 <li><%= link_to "Sair", destroy_user_session_path, :method => :delete %></li>
