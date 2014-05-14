@@ -6,12 +6,7 @@ class Institution < ActiveRecord::Base
   has_one :user, as: :role
 
   has_many :donations
+  
+  scope :search, ->(name = '') { where("name like ?", "%#{name}%") }
 
-  def self.search(name)
-    if name
-      where("name like ? or item like ?", "%#{name}%", "%#{name}%")
-    else
-      all
-    end
-  end
 end
