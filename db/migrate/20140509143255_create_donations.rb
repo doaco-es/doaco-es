@@ -7,6 +7,8 @@ class CreateDonations < ActiveRecord::Migration
       t.decimal :value
       t.integer :quantity
 
+      t.references :institution
+
       t.timestamps
     end
   end

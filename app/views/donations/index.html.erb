@@ -7,6 +7,7 @@
       <th>Quantidade</th>
       <th>Valor Financeiro</th>
       <th>Data</th>
+      <th>Instituição</th>
       <th>Ações</th>
     </tr>
   </thead>
@@ -18,6 +19,7 @@
         <td><%=donation.quantity%></td>
         <td><%=donation.value%></td>
         <td><%=donation.date%></td>
+        <td><%=link_to donation.institution.name, donation.institution %></td>
         <td><%= link_to 'Detalhes', donation %></td>
       </tr>
     <% end %>

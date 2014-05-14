@@ -6,10 +6,13 @@
 </p>
 
 <p>
-  <strong>Item:</strong>
+  <strong>Recebe:</strong>
   <%= @institution.item %>
 </p>
 
+<%= link_to 'Nova Doação', new_donation_path(@institution), class: "button" %>
+
+<br>
 
 <%= link_to 'Edit', edit_institution_path(@institution) %> |
 <%= link_to 'Back', institutions_path %>
