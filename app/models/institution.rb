@@ -7,7 +7,7 @@ class Institution < ActiveRecord::Base
 
   def self.search(name)
     if name
-      where("name like ?", "%#{name}%")
+      where("name like ? or item like ?", "%#{name}%", "%#{name}%")
     else
       all
     end
