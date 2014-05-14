@@ -15,6 +15,10 @@ class InstitutionsController < ApplicationController
   # GET /institutions/new
   def new
     @institution = Institution.new
+    @items =[ ["Brinquedos","Brinquedos"],
+              ["Roupas","Roupas"],
+              ["Dinheiro","Dinheiro"],
+              ["Alimentos", "Alimentos"]]
   end
 
   # GET /institutions/1/edit
@@ -69,6 +73,6 @@ class InstitutionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def institution_params
-      params.require(:institution).permit(:name)
+      params.require(:institution).permit(:name, :item)
     end
 end
