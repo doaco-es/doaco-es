@@ -7,6 +7,6 @@ class Institution < ActiveRecord::Base
 
   has_many :donations
   
-  scope :search, ->(name = '') { where("name like ?", "%#{name}%") }
+  scope :search, ->(name = '') { where("name like ? or item like ?", "%#{name}%", "%#{name}%") }
 
 end
